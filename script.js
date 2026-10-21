@@ -2,9 +2,9 @@
 const menus = [
     {
         id: 1,
-        name: "Kopi Susu Senja",
+        name: "Kopi Susu",
         category: "coffee",
-        price: 12000,
+        price: 15000,
         desc: "Espresso pilihan dengan fresh milk segar dan gula aren asli yang legit.",
         img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
@@ -13,9 +13,9 @@ const menus = [
         id: 2,
         name: "Caramel Macchiato",
         category: "coffee",
-        price: 15000,
+        price: 18000,
         desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://www.google.com/imgres?q=gambar%20caramel%20macchiato&imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-clipart%2F20250806%2Foriginal%2Fpngtree-iced-caramel-macchiato-drink-vector-art-png-image_21524398.png&imgrefurl=https%3A%2F%2Fid.pngtree.com%2Ffreepng%2Ficed-caramel-macchiato-drink-vector-art_21524398.html&docid=PLFXos2YppABGM&tbnid=NvFW8f8DQUbfRM&vet=12ahUKEwipmteW18qXAxUA4zgGHUDXLzYQnPAOegQIXxAA..i&w=2500&h=2500&hcb=2&ved=2ahUKEwipmteW18qXAxUA4zgGHUDXLzYQnPAOegQIXxAA",
+        img: "https://images.unsplash.com/photo-1485808190072-f004b173be84?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
     },
     {
@@ -34,7 +34,7 @@ const menus = [
         price: 18000,
         desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal.",
         img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
-        status: "Tersedia"
+        status: "Habis"
     },
     {
         id: 5,
@@ -53,16 +53,8 @@ const menus = [
         desc: "Kentang goreng renyah disajikan dengan bumbu gurih dan saus.",
         img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
-    },
-    {
-        id: 7,
-        name: "cireng bumbu rujak",
-        category: "food",
-        price: 12000,
-        desc: "Cireng yang renyah diluar dan kenyal didalam, dicocol ke saus pedas manis.",
-        img: "https://www.google.com/imgres?q=cireng%20bumbu%20rujak&imgurl=https%3A%2F%2Fo-cdf.oramiland.com%2Funsafe%2Fcnc-magazine.oramiland.com%2Fparenting%2Foriginal_images%2FResep_Cireng_Bumbu_Rujak_Krispi.jpg&imgrefurl=https%3A%2F%2Fwww.orami.co.id%2Ftools%2Fresep%2Fresep-cireng-bumbu-rujak-krispi&docid=2gP19_YTNjnu3M&tbnid=pjcdeE8f4REUQM&vet=12ahUKEwjanIuj2cqXAxVQjOEIHfSNLsEQnPAOegQIKhAA..i&w=1080&h=1076&hcb=2&ved=2ahUKEwjanIuj2cqXAxVQjOEIHfSNLsEQnPAOegQIKhAA",
-        status: "Tersedia"
-    };
+    }
+];
 
 // Keranjang Simpanan ({ id: jumlah })
 let cart = {};
