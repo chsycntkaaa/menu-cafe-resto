@@ -9,13 +9,13 @@ const menus = [
         img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
     },
-    {
+{
         id: 2,
         name: "Caramel Macchiato",
         category: "coffee",
         price: 18000,
         desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://images.unsplash.com/photo-1485808190072-f004b173be84?auto=format&fit=crop&w=500&q=80",
+        img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
     },
     {
