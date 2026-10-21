@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Senja - Menu Digital</title>
+    <!-- Google Fonts & FontAwesome untuk Ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #8D4925;
+            --secondary: #D0B8A8;
+            --background: #F8F5F2;
+            --card-bg: #FFFFFF;
+            --text-main: #2C221E;
+            --text-muted: #79716B;
+            --accent: #E8DFCA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container agar tampil seperti mobile app di layar besar */
+        .phone-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--background);
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        /* Header Cafe */
+        header {
+            background: linear-gradient(135deg, var(--primary), #6B3417);
+            color: white;
+            padding: 24px 20px;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(141, 73, 37, 0.2);
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* Search Bar */
+        .search-box {
+            padding: 16px 20px 0 20px;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 16px;
+            color: var(--text-muted);
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            padding: 12px 16px 12px 45px;
+            border-radius: 12px;
+            border: 1px solid var(--accent);
+            background: white;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-wrapper input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(141, 73, 37, 0.1);
+        }
+
+        /* Filter Kategori */
+        .categories {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 16px 20px;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .cat-btn {
+            background: white;
+            border: 1px solid var(--accent);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Daftar Menu Container */
+        .menu-list {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Kartu Menu */
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(232, 223, 202, 0.5);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .menu-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .menu-info {
+            flex-grow: 1;
+        }
+
+        .menu-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .menu-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-price {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .badge-status {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        /* Modal / Pop-up Detail */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: white;
+            width: 100%;
+            max-width: 480px;
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            padding: 24px;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.1, 1, 0.1, 1);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .modal-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .close-modal {
+            margin-top: 10px;
+            background: none;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Pesan kosong jika tidak ditemukan */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+        <!-- Header -->
+        <header>
+            <h1>Kafe Senja ✨</h1>
+            <p>Silakan pilih menu favoritmu di bawah ini</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Cari kopi atau makanan...">
+            </div>
+        </div>
+
+        <!-- Filter Kategori -->
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterMenu('all')">Semua</button>
+            <button class="cat-btn" onclick="filterMenu('coffee')">Kopi</button>
+            <button class="cat-btn" onclick="filterMenu('non-coffee')">Non-Kopi</button>
+            <button class="cat-btn" onclick="filterMenu('food')">Makanan</button>
+        </div>
+
+        <!-- Daftar Menu -->
+        <div class="menu-list" id="menuList">
+            <!-- Data Menu akan dirender secara dinamis lewat JavaScript -->
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <i class="fa-solid fa-mug-hot" style="font-size: 32px; margin-bottom: 8px;"></i>
+            <p>Menu tidak ditemukan</p>
+        </div>
+    </div>
+
+    <!-- Modal Detail Menu -->
+    <div class="modal" id="menuModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImg" class="modal-img" src="" alt="Menu">
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <p id="modalDesc" class="modal-desc"></p>
+            <div id="modalPrice" class="modal-price"></div>
+            <a id="waLink" href="#" target="_blank" class="wa-btn">
+                <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Pesan via WhatsApp
+            </a>
+            <button class="close-modal" onclick="closeModalDirect()">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Produk Kafe
+        const menus = [
+            {
+                id: 1,
+                name: "Kopi Susu Senja",
+                category: "coffee",
+                price: "Rp 22.000",
+                rawPrice: 22000,
+                desc: "Espresso pilihan dengan fresh milk segar dan gula aren asli yang legit dan creamy.",
+                img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
+                status: "Tersedia"
+            },
+            {
+                id: 2,
+                name: "Caramel Macchiato",
+                category: "coffee",
+                price: "Rp 28.000",
+                rawPrice: 28000,
+                desc: "Paduan sempurna espresso, susu lembut, dan sirup karamel manis di bagian atasnya.",
+                img: "https://images.unsplash.com/photo-1485808190072-f004b173be84?auto=format&fit=crop&w=500&q=80",
+                status: "Tersedia"
+            },
+            {
+                id: 3,
+                name: "Matcha Latte",
+                category: "non-coffee",
+                price: "Rp 25.000",
+                rawPrice: 25000,
+                desc: "Bubuk matcha premium Jepang asli diseduh dengan susu lembut berkualitas.",
+                img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80",
+                status: "Tersedia"
+            },
+            {
+                id: 4,
+                name: "Chocolate Regal",
+                category: "non-coffee",
+                price: "Rp 24.000",
+                rawPrice: 24000,
+                desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal di dalamnya.",
+                img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
+                status: "Habis"
+            },
+            {
+                id: 5,
+                name: "Croissant Butter",
+                category: "food",
+                price: "Rp 18.000",
+                rawPrice: 18000,
+                desc: "Pastry renyah di luar, lembut dan berongga mentega di dalam khas Prancis.",
+                img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80",
+                status: "Tersedia"
+            },
+            {
+                id: 6,
+                name: "French Fries Special",
+                category: "food",
+                price: "Rp 16.000",
+                rawPrice: 16000,
+                desc: "Kentang goreng renyah disajikan dengan bumbu tabur gurih dan saus sambal.",
+                img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
+                status: "Tersedia"
+            }
+        ];
+
+        const menuListEl = document.getElementById('menuList');
+        const emptyStateEl = document.getElementById('emptyState');
+        const searchInput = document.getElementById('searchInput');
+        const modal = document.getElementById('menuModal');
+        
+        let currentCategory = 'all';
+
+        // Fungsi Menampilkan Menu ke Layar
+        function displayMenus(items) {
+            menuListEl.innerHTML = '';
+            if (items.length === 0) {
+                emptyStateEl.style.display = 'block';
+                return;
+            }
+            emptyStateEl.style.display = 'none';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'menu-card';
+                card.onclick = () => openModal(item);
+                
+                card.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}" class="menu-img">
+                    <div class="menu-info">
+                        <div class="menu-title">${item.name}</div>
+                        <div class="menu-desc">${item.desc}</div>
+                        <div class="menu-footer">
+                            <span class="menu-price">${item.price}</span>
+                            <span class="badge-status" style="background: ${item.status === 'Tersedia' ? '#E8F5E9' : '#FFEBEE'}; color: ${item.status === 'Tersedia' ? '#2E7D32' : '#C62828'}">${item.status}</span>
+                        </div>
+                    </div>
+                `;
+                menuListEl.appendChild(card);
+            });
+        }
+
+        // Filter Kategori
+        function filterMenu(category) {
+            currentCategory = category;
+            
+            // Atur tombol aktif
+            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            applyFilterAndSearch();
+        }
+
+        // Live Search & Filter Kombinasi
+        function applyFilterAndSearch() {
+            const keyword = searchInput.value.toLowerCase();
+            
+            const filtered = menus.filter(item => {
+                const matchCategory = currentCategory === 'all' || item.category === currentCategory;
+                const matchKeyword = item.name.toLowerCase().includes(keyword) || item.desc.toLowerCase().includes(keyword);
+                return matchCategory && matchKeyword;
+            });
+
+            displayMenus(filtered);
+        }
+
+        searchInput.addEventListener('input', applyFilterAndSearch);
+
+        // Buka Modal Detail
+        function openModal(item) {
+            document.getElementById('modalImg').src = item.img;
+            document.getElementById('modalTitle').innerText = item.name;
+            document.getElementById('modalDesc').innerText = item.desc;
+            document.getElementById('modalPrice').innerText = item.price;
+            
+            // Ubah link WhatsApp otomatis
+            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp kasir/kafe kamu
+            const text = encodeURIComponent(`Halo Kak, saya mau pesan: *${item.name}* (${item.price}). Mohon diproses ya!`);
+            document.getElementById('waLink').href = `https://wa.me/${phone}?text=${text}`;
+
+            modal.classList.add('active');
+        }
+
+        // Tutup Modal
+        function closeModal(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        function closeModalDirect() {
+            modal.classList.remove('active');
+        }
+
+        // Tampilkan semua menu saat pertama kali dimuat
+        displayMenus(menus);
+    </script>
+</body>
+</html>
