@@ -15,7 +15,7 @@ const menus = [
         category: "coffee",
         price: 18000,
         desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://images.unsplash.com/photo-1485808190072-f004b173be84?auto=format&fit=crop&w=500&q=80",
+        img: "https://www.figjar.com/homemade-caramel-macchiato-recipe/",
         status: "Tersedia"
     },
     {
@@ -33,7 +33,7 @@ const menus = [
         category: "non-coffee",
         price: 18000,
         desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal.",
-        img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
+        img: "https://pngtree.com/freepng/regal-milk-coffee-ice_24052004.html",
         status: "Habis"
     },
     {
