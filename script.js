@@ -15,7 +15,7 @@ const menus = [
         category: "coffee",
         price: 18000,
         desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Caff%C3%A8_Macchiato_in_Gent.jpg/640px-Caff%C3%A8_Macchiato_in_Gent.jpg",
         status: "Tersedia"
     },
     {
