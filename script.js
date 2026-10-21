@@ -1,16 +1,16 @@
-// Data Produk Kafe
+// Data Produk Kafe (Caramel Macchiato telah dihapus)
 const menus = [
     {
         id: 1,
         name: "Kopi Susu",
         category: "coffee",
-        price: 15000,
+        price: 16000,
         desc: "Espresso pilihan dengan fresh milk segar dan gula aren asli yang legit.",
         img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
     },
     {
-        id: 2,
+        id: 3,
         name: "Matcha Latte",
         category: "non-coffee",
         price: 20000,
@@ -19,16 +19,16 @@ const menus = [
         status: "Tersedia"
     },
     {
-        id: 3,
+        id: 4,
         name: "Chocolate Regal",
         category: "non-coffee",
-        price: 18000,
+        price: 19000,
         desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal.",
         img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
         status: "Habis"
     },
     {
-        id: 4,
+        id: 5,
         name: "Croissant Butter",
         category: "food",
         price: 18000,
@@ -37,10 +37,10 @@ const menus = [
         status: "Tersedia"
     },
     {
-        id: 5,
+        id: 6,
         name: "French Fries Special",
         category: "food",
-        price: 15000,
+        price: 14000,
         desc: "Kentang goreng renyah disajikan dengan bumbu gurih dan saus.",
         img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
