@@ -19,15 +19,6 @@ const menus = [
         status: "Tersedia"
     },
     {
-        id: 4,
-        name: "Chocolate Regal",
-        category: "non-coffee",
-        price: 19000,
-        desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal.",
-        img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
-        status: "Habis"
-    },
-    {
         id: 5,
         name: "Croissant Butter",
         category: "food",
