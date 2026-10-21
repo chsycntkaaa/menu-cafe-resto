@@ -62,7 +62,7 @@ const menus = [
         desc: "Cireng yang renyah diluar dan kenyal didalam, dicocol ke saus pedas manis.",
         img: "https://www.google.com/imgres?q=cireng%20bumbu%20rujak&imgurl=https%3A%2F%2Fo-cdf.oramiland.com%2Funsafe%2Fcnc-magazine.oramiland.com%2Fparenting%2Foriginal_images%2FResep_Cireng_Bumbu_Rujak_Krispi.jpg&imgrefurl=https%3A%2F%2Fwww.orami.co.id%2Ftools%2Fresep%2Fresep-cireng-bumbu-rujak-krispi&docid=2gP19_YTNjnu3M&tbnid=pjcdeE8f4REUQM&vet=12ahUKEwjanIuj2cqXAxVQjOEIHfSNLsEQnPAOegQIKhAA..i&w=1080&h=1076&hcb=2&ved=2ahUKEwjanIuj2cqXAxVQjOEIHfSNLsEQnPAOegQIKhAA",
         status: "Tersedia"
-];
+    };
 
 // Keranjang Simpanan ({ id: jumlah })
 let cart = {};
