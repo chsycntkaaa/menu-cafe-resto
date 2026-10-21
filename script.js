@@ -9,17 +9,8 @@ const menus = [
         img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
     },
-{
-        id: 2,
-        name: "Caramel Macchiato",
-        category: "coffee",
-        price: 18000,
-        desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Caff%C3%A8_Macchiato_in_Gent.jpg/640px-Caff%C3%A8_Macchiato_in_Gent.jpg",
-        status: "Tersedia"
-    },
     {
-        id: 3,
+        id: 2,
         name: "Matcha Latte",
         category: "non-coffee",
         price: 20000,
@@ -28,7 +19,7 @@ const menus = [
         status: "Tersedia"
     },
     {
-        id: 4,
+        id: 3,
         name: "Chocolate Regal",
         category: "non-coffee",
         price: 18000,
@@ -37,7 +28,7 @@ const menus = [
         status: "Habis"
     },
     {
-        id: 5,
+        id: 4,
         name: "Croissant Butter",
         category: "food",
         price: 18000,
@@ -46,7 +37,7 @@ const menus = [
         status: "Tersedia"
     },
     {
-        id: 6,
+        id: 5,
         name: "French Fries Special",
         category: "food",
         price: 15000,
