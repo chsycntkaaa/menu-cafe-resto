@@ -4,7 +4,7 @@ const menus = [
         id: 1,
         name: "Kopi Susu Senja",
         category: "coffee",
-        price: 22000,
+        price: 12000,
         desc: "Espresso pilihan dengan fresh milk segar dan gula aren asli yang legit.",
         img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
@@ -13,16 +13,16 @@ const menus = [
         id: 2,
         name: "Caramel Macchiato",
         category: "coffee",
-        price: 28000,
+        price: 15000,
         desc: "Paduan espresso, susu lembut, dan sirup karamel manis.",
-        img: "https://images.unsplash.com/photo-1485808190072-f004b173be84?auto=format&fit=crop&w=500&q=80",
+        img: "https://www.google.com/imgres?q=gambar%20caramel%20macchiato&imgurl=https%3A%2F%2Fpng.pngtree.com%2Fpng-clipart%2F20250806%2Foriginal%2Fpngtree-iced-caramel-macchiato-drink-vector-art-png-image_21524398.png&imgrefurl=https%3A%2F%2Fid.pngtree.com%2Ffreepng%2Ficed-caramel-macchiato-drink-vector-art_21524398.html&docid=PLFXos2YppABGM&tbnid=NvFW8f8DQUbfRM&vet=12ahUKEwipmteW18qXAxUA4zgGHUDXLzYQnPAOegQIXxAA..i&w=2500&h=2500&hcb=2&ved=2ahUKEwipmteW18qXAxUA4zgGHUDXLzYQnPAOegQIXxAA",
         status: "Tersedia"
     },
     {
         id: 3,
         name: "Matcha Latte",
         category: "non-coffee",
-        price: 25000,
+        price: 20000,
         desc: "Bubuk matcha premium Jepang asli diseduh dengan susu segar.",
         img: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
@@ -31,10 +31,10 @@ const menus = [
         id: 4,
         name: "Chocolate Regal",
         category: "non-coffee",
-        price: 24000,
+        price: 18000,
         desc: "Susu cokelat lezat berpadu dengan remahan biskuit Marie Regal.",
         img: "https://images.unsplash.com/photo-1543253687-c931c8e01820?auto=format&fit=crop&w=500&q=80",
-        status: "Habis"
+        status: "Tersedia"
     },
     {
         id: 5,
@@ -49,7 +49,7 @@ const menus = [
         id: 6,
         name: "French Fries Special",
         category: "food",
-        price: 16000,
+        price: 15000,
         desc: "Kentang goreng renyah disajikan dengan bumbu gurih dan saus.",
         img: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
         status: "Tersedia"
@@ -207,7 +207,7 @@ function openCartModal() {
     waMessageText += `\n*Total Tagihan:* ${formatRupiah(totalPrice)}\n\nMohon diproses ya kak, terima kasih!`;
 
     // Buat Link WhatsApp
-    const phone = "6281234567890"; // Ganti dengan Nomor WhatsApp Kasir Kafe kamu
+    const phone = "6285815721138"; // Ganti dengan Nomor WhatsApp Kasir Kafe kamu
     document.getElementById('waCheckoutBtn').href = `https://wa.me/${phone}?text=${encodeURIComponent(waMessageText)}`;
 
     cartModal.classList.add('active');
