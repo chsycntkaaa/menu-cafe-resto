@@ -1,26 +1,20 @@
-/* ===================================================
-   1. RESET & VARIABLE DESAIN
-   =================================================== */
 :root {
-    --primary: #8D4925;        /* Warna cokelat utama kafe */
-    --primary-dark: #6B3417;   /* Warna cokelat tua untuk hover/header */
-    --secondary: #D0B8A8;      /* Warna cokelat krem muda */
-    --background: #F8F5F2;     /* Warna latar belakang lembut */
-    --card-bg: #FFFFFF;        /* Warna latar kartu menu */
-    --text-main: #2C221E;      /* Warna teks utama */
-    --text-muted: #79716B;     /* Warna teks sekunder/deskripsi */
-    --accent: #E8DFCA;         /* Warna pembatas (border) */
-    --success-bg: #E8F5E9;     /* Latar label status Tersedia */
-    --success-text: #2E7D32;   /* Teks label status Tersedia */
-    --danger-bg: #FFEBEE;      /* Latar label status Habis */
-    --danger-text: #C62828;    /* Teks label status Habis */
+    --primary: #8D4925;
+    --primary-dark: #6B3417;
+    --secondary: #D0B8A8;
+    --background: #F8F5F2;
+    --card-bg: #FFFFFF;
+    --text-main: #2C221E;
+    --text-muted: #79716B;
+    --accent: #E8DFCA;
+    --whatsapp: #25D366;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
@@ -31,28 +25,23 @@ body {
     min-height: 100vh;
 }
 
-/* ===================================================
-   2. TATA LETAK UTAMA (MOBILE CONTAINER)
-   =================================================== */
 .phone-container {
     width: 100%;
-    max-width: 480px; /* Batas lebar agar tampak seperti aplikasi HP di PC */
+    max-width: 480px;
     background-color: var(--background);
     min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-bottom: 40px;
+    padding-bottom: 110px;
 }
 
-/* ===================================================
-   3. HEADER KAFE
-   =================================================== */
+/* Header */
 header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: #FFFFFF;
-    padding: 28px 20px 24px 20px;
+    color: white;
+    padding: 24px 20px;
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
     text-align: center;
@@ -63,17 +52,14 @@ header h1 {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 4px;
-    letter-spacing: -0.5px;
 }
 
 header p {
     font-size: 13px;
-    opacity: 0.88;
+    opacity: 0.85;
 }
 
-/* ===================================================
-   4. KOOTAK PENCARIAN (SEARCH BAR)
-   =================================================== */
+/* Search Bar */
 .search-box {
     padding: 16px 20px 0 20px;
 }
@@ -88,7 +74,6 @@ header p {
     position: absolute;
     left: 16px;
     color: var(--text-muted);
-    font-size: 14px;
 }
 
 .search-wrapper input {
@@ -96,34 +81,32 @@ header p {
     padding: 12px 16px 12px 45px;
     border-radius: 12px;
     border: 1px solid var(--accent);
-    background: #FFFFFF;
+    background: white;
     font-size: 14px;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
 .search-wrapper input:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(141, 73, 37, 0.12);
+    box-shadow: 0 0 0 3px rgba(141, 73, 37, 0.1);
 }
 
-/* ===================================================
-   5. FILTER KATEGORI (TOMBOL SLIDER)
-   =================================================== */
+/* Filter Kategori */
 .categories {
     display: flex;
     gap: 8px;
     overflow-x: auto;
     padding: 16px 20px;
-    scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
+    scrollbar-width: none;
 }
 
 .categories::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar di Chrome/Safari */
+    display: none;
 }
 
 .cat-btn {
-    background: #FFFFFF;
+    background: white;
     border: 1px solid var(--accent);
     color: var(--text-muted);
     padding: 8px 16px;
@@ -135,16 +118,13 @@ header p {
     transition: all 0.3s ease;
 }
 
-.cat-btn.active, 
-.cat-btn:hover {
+.cat-btn.active, .cat-btn:hover {
     background: var(--primary);
-    color: #FFFFFF;
+    color: white;
     border-color: var(--primary);
 }
 
-/* ===================================================
-   6. DAFTAR KARTU MENU
-   =================================================== */
+/* Daftar Menu Container */
 .menu-list {
     padding: 0 20px;
     display: flex;
@@ -152,27 +132,21 @@ header p {
     gap: 12px;
 }
 
+/* Kartu Menu */
 .menu-card {
     background: var(--card-bg);
     border-radius: 16px;
     padding: 12px;
     display: flex;
-    gap: 14px;
+    gap: 12px;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid rgba(232, 223, 202, 0.6);
-}
-
-.menu-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    border: 1px solid rgba(232, 223, 202, 0.5);
 }
 
 .menu-img {
-    width: 80px;
-    height: 80px;
+    width: 76px;
+    height: 76px;
     border-radius: 12px;
     object-fit: cover;
     flex-shrink: 0;
@@ -183,21 +157,20 @@ header p {
 }
 
 .menu-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--text-main);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .menu-desc {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.4;
 }
 
 .menu-footer {
@@ -212,26 +185,211 @@ header p {
     color: var(--primary);
 }
 
-.badge-status {
+/* Tombol Plus / Minus (+/-) */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--background);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: 3px 6px;
+}
+
+.btn-qty {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.btn-qty:active {
+    transform: scale(0.9);
+}
+
+.qty-number {
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 16px;
+    text-align: center;
+}
+
+.badge-out {
     font-size: 10px;
-    padding: 3px 8px;
+    padding: 4px 8px;
     border-radius: 6px;
     font-weight: 600;
+    background: #FFEBEE;
+    color: #C62828;
 }
 
-.badge-status.available {
-    background: var(--success-bg);
-    color: var(--success-text);
+/* Floating Cart Bar */
+.cart-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 440px;
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(141, 73, 37, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
 }
 
-.badge-status.empty {
-    background: var(--danger-bg);
-    color: var(--danger-text);
+.cart-bar.hidden {
+    transform: translate(-50%, 120px);
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* ===================================================
-   7. MODAL / POP-UP DETAIL MENU (BOTTOM SHEET)
-   =================================================== */
+.cart-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-count {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.cart-total {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cart-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Modal Ringkasan Pesanan */
 .modal {
     position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 480px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 24px;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.1, 1, 0.1, 1);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 12px;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.cart-item-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cart-item-price {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.modal-total-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px dashed var(--accent);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--whatsapp);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 16px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.close-modal {
+    margin-top: 8px;
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    display: none;
+}
